@@ -19,6 +19,13 @@ app.get('/status', (req, res) => {
 	})
 })
 
+app.post('/register', (req, res) => {
+	console.log(req.body);
+	res.send({
+		message: `User ${req.body.email}! was registered!`
+	})
+})
+
 app.listen(process.env.PORT || 8081, () => {
 	console.log('Server started at http://127.0.0.1:8081')
 });
