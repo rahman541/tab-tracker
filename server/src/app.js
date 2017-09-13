@@ -19,6 +19,6 @@ app.get('/status', (req, res) => {
 	})
 })
 
-app.listen(process.env.PORT || 8080, () => {
-	console.log('Server started at http://127.0.0.1:8080')
+app.listen(process.env.PORT || 8081, () => {
+	console.log('Server started at http://127.0.0.1:8081')
 });
