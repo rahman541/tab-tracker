@@ -1,6 +1,6 @@
 ### NPM Dev Dependency
 ```
-npm add -D nodemon jslint
+npm add -D nodemon eslint
 npm add express body-parser cors morgan
 ```
 ### Setup Dev
