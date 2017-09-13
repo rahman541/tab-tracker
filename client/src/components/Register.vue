@@ -4,7 +4,7 @@
 
     <input type="email" name="email" placeholder="Email" v-model="email">
     <input type="password" name="password" placeholder="Password" v-model="password">
-    <button>Register</button>
+    <button @click="register">Register</button>
 
   </div>
 </template>
@@ -17,15 +17,10 @@ export default {
       password: '1213232'
     }
   },
-  watch: {
-    email (value) {
-      console.log('email updated', value)
+  methods: {
+    register () {
+      console.log('register button clicked!', this.email, this.password)
     }
-  },
-  mounted () {
-    setTimeout(() => {
-      this.email = 'hello world'
-    }, 1000)
   }
 }
 </script>
