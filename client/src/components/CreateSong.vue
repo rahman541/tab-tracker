@@ -63,6 +63,15 @@
             v-model="song.lyrics"
           ></v-text-field>
       </panel>
+
+      <v-alert
+        class="ml-4"
+        :value="error"
+        transition="scale-transition"
+        error>
+        {{error}}
+      </v-alert>﻿
+
       <v-btn dark class="cyan" @click="create">Create Song</v-btn>
     </v-flex>
   </v-layout>
@@ -74,8 +83,8 @@ import SongsService from '@/services/SongsService'
 export default {
   data () {
     return {
+      error: null,
       song: {
-        id: null,
         title: null,
         artist: null,
         genre: null,
@@ -90,6 +99,13 @@ export default {
   },
   methods: {
     async create () {
+      this.error = null
+      const areAllFieldFilledIn = Object.keys(this.song).every(key => !!this.song[key])
+      console.log(areAllFieldFilledIn)
+      if (!areAllFieldFilledIn) {
+        this.error = 'Please fill in all the required field.'
+        return
+      }
       try {
         await SongsService.post(this.song)
         this.$router.push({
