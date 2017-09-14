@@ -2,7 +2,7 @@
   <v-layout column>
     <v-flex xs6 offset-xs3>
       <panel title="Song">
-        <div v-for="song in songs" :key="song.title">
+        <div v-for="song in songs" :key="song.id">
           {{ song.title }}
         </div>
       </panel>
@@ -23,7 +23,8 @@ export default {
     }
   },
   async mounted () {
-    this.song = await SongsService.index()
+    this.songs = (await SongsService.index()).data
+    console.log('songs', this.songs)
   }
 }
 </script>
