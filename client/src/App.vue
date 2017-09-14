@@ -3,7 +3,7 @@
     <v-app>
       <main>
         <page-header />
-        <v-container>
+        <v-container fluid>
           <router-view></router-view>
         </v-container>
       </main>
@@ -29,8 +29,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-.input-group--text-field input {
-  border-bottom: 1px solid black;
 }
 </style>
