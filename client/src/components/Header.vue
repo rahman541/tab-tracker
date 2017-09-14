@@ -1,6 +1,8 @@
 <template>
   <v-toolbar fixed class="cyan" dark>
-    <v-toolbar-title class="mr-4">TabTracker</v-toolbar-title>
+    <v-toolbar-title class="mr-4">
+      <span class="home" @click="navigateTo({name: 'root'})">TabTracker</span>
+    </v-toolbar-title>
 
     <!-- TODO: Implement this -->
     <!-- <v-toolbar-items>
@@ -21,13 +23,19 @@
 
 <script>
 export default {
-  name: 'hello',
-  data () {
-    return {
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
     }
   }
 }
 </script>
 
 <style scoped>
+.home {
+  cursor: pointer;
+}
+.home:hover {
+  color: #E9E;
+}
 </style>
