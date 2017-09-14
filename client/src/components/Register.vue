@@ -6,10 +6,20 @@
           <v-toolbar-title>Register</v-toolbar-title>
         </v-toolbar>
         <div  class="pl-4 pr-4 pb-2">
-          <h1>Register</h1>
 
-          <input type="email" name="email" placeholder="Email" v-model="email">
-          <input type="password" name="password" placeholder="Password" v-model="password">
+          <v-text-field
+            v-model="email"
+            name="email"
+            label="Email"
+            id="email"
+          ></v-text-field>
+
+          <v-text-field
+            v-model="password"
+            name="password"
+            label="Password"
+            id="password"
+          ></v-text-field>
 
           <div v-html="error" class="error" /><br/>
 
