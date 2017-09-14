@@ -4,12 +4,11 @@
       <span class="home" @click="navigateTo({name: 'root'})">TabTracker</span>
     </v-toolbar-title>
 
-    <!-- TODO: Implement this -->
-    <!-- <v-toolbar-items>
-      <v-btn flat dark>
+    <v-toolbar-items>
+      <v-btn flat dark to="song">
         Browse
       </v-btn>
-    </v-toolbar-items> -->
+    </v-toolbar-items>
 
     <v-spacer></v-spacer>
 
