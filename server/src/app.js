@@ -23,7 +23,7 @@ app.get('/status', (req, res) => {
 
 require('./routes.js')(app)
 
-sequelize.sync({force: false}).then(() => {
+sequelize.sync({force: true}).then(() => {
 	app.listen(config.port, () => {
 		console.log(`Server started at http://127.0.0.1:${config.port}`)
 	});
