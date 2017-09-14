@@ -26,8 +26,8 @@ export default new Router({
       component: Login
     },
     {
-      path: '/song',
-      name: 'song',
+      path: '/songs',
+      name: 'songs',
       component: Song
     },
     {
