@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
+const {sequelize} = require('./models')
+const config = require('./config/config')
 
 const app = express()
 // Seting up middleware
@@ -19,12 +21,10 @@ app.get('/status', (req, res) => {
 	})
 })
 
-app.post('/register', (req, res) => {
-	res.send({
-		message: `User ${req.body.email}! was registered!`
-	})
-})
+require('./routes.js')(app)
 
-app.listen(process.env.PORT || 8081, () => {
-	console.log('Server started at http://127.0.0.1:8081')
-});
+sequelize.sync({force: true}).then(() => {
+	app.listen(config.port, () => {
+		console.log(`Server started at http://127.0.0.1:${config.port}`)
+	});
+})
