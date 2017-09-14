@@ -34,7 +34,7 @@
           label="Album Image Url"
           required
           :rules="[required]"
-          v-model="song.albumImage"
+          v-model="song.albumImageUrl"
         ></v-text-field>
 
         <v-text-field
@@ -89,7 +89,7 @@ export default {
         artist: null,
         genre: null,
         album: null,
-        albumImage: null,
+        albumImageUrl: null,
         youtubeId: null,
         lyrics: null,
         tab: null
@@ -101,7 +101,6 @@ export default {
     async create () {
       this.error = null
       const areAllFieldFilledIn = Object.keys(this.song).every(key => !!this.song[key])
-      console.log(areAllFieldFilledIn)
       if (!areAllFieldFilledIn) {
         this.error = 'Please fill in all the required field.'
         return
