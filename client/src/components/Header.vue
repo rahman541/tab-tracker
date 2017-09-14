@@ -14,6 +14,12 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-items>
+      <v-btn flat dark to="login">
+        Login
+      </v-btn>
+    </v-toolbar-items>
+
+    <v-toolbar-items>
       <v-btn flat dark to="register">
         Sign Up
       </v-btn>
