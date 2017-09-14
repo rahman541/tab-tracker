@@ -6,24 +6,27 @@
           <v-toolbar-title>Register</v-toolbar-title>
         </v-toolbar>
         <div  class="pl-4 pr-4 pb-2">
+          <form name="tab-tracker-form" autocomplete="off">
+            <v-text-field
+              v-model="email"
+              name="email"
+              label="Email"
+              id="email"
+            ></v-text-field>
 
-          <v-text-field
-            v-model="email"
-            name="email"
-            label="Email"
-            id="email"
-          ></v-text-field>
+            <v-text-field
+              v-model="password"
+              type="password"
+              name="password"
+              label="Password"
+              autocomplete="new-password"
+              id="password"
+            ></v-text-field>
 
-          <v-text-field
-            v-model="password"
-            name="password"
-            label="Password"
-            id="password"
-          ></v-text-field>
+            <div v-html="error" class="error" /><br/>
 
-          <div v-html="error" class="error" /><br/>
-
-          <v-btn class="cyan" @click="register" dark>Register</v-btn>
+            <v-btn class="cyan" @click="register" dark>Register</v-btn>
+          </form>
         </div>
       </div>
     </v-flex>

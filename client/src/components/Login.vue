@@ -16,6 +16,7 @@
 
           <v-text-field
             v-model="password"
+            type="password"
             name="password"
             label="Password"
             id="password"
