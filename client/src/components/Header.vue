@@ -5,7 +5,7 @@
     </v-toolbar-title>
 
     <v-toolbar-items>
-      <v-btn flat dark to="songs">
+      <v-btn flat dark :to="{name: 'songs'}">
         Browse
       </v-btn>
     </v-toolbar-items>
@@ -13,11 +13,11 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-items>
-      <v-btn flat dark to="login" v-if="!$store.state.isUserLoggedIn">
+      <v-btn flat dark :to="{name:'login'}" v-if="!$store.state.isUserLoggedIn">
         Login
       </v-btn>
 
-      <v-btn flat dark to="register" v-if="!$store.state.isUserLoggedIn">
+      <v-btn flat dark :to="{name:'register'}" v-if="!$store.state.isUserLoggedIn">
         Sign Up
       </v-btn>
 
