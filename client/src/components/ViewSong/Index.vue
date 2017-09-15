@@ -11,6 +11,7 @@
 
     <v-layout class="mt-2">
       <v-flex xs6>
+        <tab :song="song" />
       </v-flex>
       <v-flex xs6 class="ml-2">
         <lyrics :song="song" />
@@ -24,6 +25,7 @@ import Panel from '@/components/Panel'
 import SongMetadata from './SongMetadata'
 import YouTube from './YouTube'
 import Lyrics from './Lyrics'
+import Tab from './Tab'
 export default {
   data () {
     return {
@@ -38,6 +40,7 @@ export default {
     Panel,
     SongMetadata,
     Lyrics,
+    Tab,
     YouTube
   }
 }
