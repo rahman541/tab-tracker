@@ -17,7 +17,7 @@ Vue.config.productionTip = false
 
 Vue.use(Vuetify)
 
-Vue.components('panel', Panel)
+Vue.component('panel', Panel)
 
 sync(store, router)
 
