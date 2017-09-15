@@ -51,6 +51,9 @@ export default {
     ])
   },
   async mounted () {
+    if (!this.isUserLoggedIn) {
+      return
+    }
     try {
       const bookmark = (await BookmarkService.index({
         songId: this.song.id,
@@ -68,9 +71,8 @@ export default {
           songId: this.song.id,
           userId: this.$store.state.user.id
         })
-        this.isBookmarked = !!bookmark
       } catch (err) {
-        console.log('Error occur')
+        console.log(err)
       }
     },
     async unbookmark () {
@@ -79,9 +81,8 @@ export default {
           songId: this.song.id,
           userId: this.$store.state.user.id
         })
-        this.isBookmarked = !!bookmark
       } catch (err) {
-        console.log('Error occur')
+        console.log(err)
       }
     }
   }
