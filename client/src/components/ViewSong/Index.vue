@@ -9,16 +9,13 @@
       </v-flex>
     </v-layout>
 
-    <!-- <v-layout>
-      <v-flex xs6 class="ml-2">
-        <panel title="Lyrics">
-          <textarea
-            readonly
-            v-model="song.lyrics"
-          ></textarea>
-        </panel>
+    <v-layout class="mt-2">
+      <v-flex xs6>
       </v-flex>
-    </v-layout> -->
+      <v-flex xs6 class="ml-2">
+        <lyrics :song="song" />
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 <script>
@@ -26,6 +23,7 @@ import SongsService from '@/services/SongsService'
 import Panel from '@/components/Panel'
 import SongMetadata from './SongMetadata'
 import YouTube from './YouTube'
+import Lyrics from './Lyrics'
 export default {
   data () {
     return {
@@ -39,20 +37,11 @@ export default {
   components: {
     Panel,
     SongMetadata,
+    Lyrics,
     YouTube
   }
 }
 </script>
 
 <style scoped>
-textarea {
-  width: 100%;
-  font-family: monospace;
-  border: none;
-  height: 600px;
-  border-style: none;
-  border-color: transparent;
-  overflow: auto;
-  padding: 20px;
-}
 </style>

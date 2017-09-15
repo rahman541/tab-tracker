@@ -2,8 +2,8 @@
   <panel title="Youtube Video">
     <youtube
       :video-id="youtubeId"
-      :player-width="500"
-      :player-height="200"
+      :player-width="600"
+      :player-height="232"
     ></youtube>
   </panel>
 </template>
