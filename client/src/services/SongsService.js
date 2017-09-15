@@ -8,7 +8,7 @@ export default {
     return Api().post('song', song)
   },
   show (songId) {
-    return Api().get(`songs/${songId}`)
+    return Api().get(`song/${songId}`)
   }
 }
 
