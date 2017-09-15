@@ -21,6 +21,8 @@ app.get('/status', (req, res) => {
 	})
 })
 
+require('./passport')
+
 require('./routes.js')(app)
 
 sequelize.sync({force: false}).then(() => {
