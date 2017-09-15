@@ -11,7 +11,7 @@ npm run dev
 ```
 
 ## Testing account
-Username: test@gmail.com
+Username: test@gmail.com   
 Password: 12345678
 
 ### Reference
