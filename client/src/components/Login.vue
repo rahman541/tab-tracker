@@ -17,7 +17,12 @@
           id="password"
         ></v-text-field>
 
-        <div v-html="error" class="error" /><br/>
+        <v-alert
+          :value="error"
+          transition="scale-transition"
+          error>
+          {{ error }}
+        </v-alert>﻿
 
         <v-btn class="cyan" @click="login" dark>Login</v-btn>
       </panel>

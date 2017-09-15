@@ -65,11 +65,10 @@
       </panel>
 
       <v-alert
-        class="ml-4"
         :value="error"
         transition="scale-transition"
         error>
-        {{error}}
+        {{ error }}
       </v-alert>﻿
 
       <v-btn dark class="cyan" @click="create">Create Song</v-btn>
