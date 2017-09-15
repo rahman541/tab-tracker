@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node node_modules/nodemon/bin/nodemon.js src/app.js --exec",
-    "lint": "node node_modules/.bin/eslint **.*.js"
+    "lint": "node node_modules/.bin/eslint **.*.js",
+    "seed": "node ./seed"
   },
   "author": "",
   "license": "ISC",
