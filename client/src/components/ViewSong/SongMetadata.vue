@@ -16,6 +16,13 @@
           Edit
         </v-btn>
 
+        <v-btn v-if="isUserLoggedIn" dark class="cyan" @click="unbookmark">
+          Unbookmark
+        </v-btn>
+        <v-btn v-if="isUserLoggedIn" dark class="cyan" @click="bookmark">
+          Bookmark
+        </v-btn>
+
       </v-flex>
 
       <v-flex xs6>
@@ -27,10 +34,24 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   props: [
     'song'
-  ]
+  ],
+  computed: {
+    ...mapState([
+      'isUserLoggedIn'
+    ])
+  },
+  methods: {
+    unbookmark () {
+      console.log('unbookmark')
+    },
+    bookmark () {
+      console.log('ajs')
+    }
+  }
 }
 </script>
 
