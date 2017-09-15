@@ -9,12 +9,10 @@
 
 <script>
 import SongsService from '@/services/SongsService'
-import Panel from '@/components/Panel'
 import SongsPanel from './SongsPanel'
 import SongsSearchPanel from './SongsSearchPanel'
 export default {
   components: {
-    Panel,
     SongsPanel,
     SongsSearchPanel
   },
