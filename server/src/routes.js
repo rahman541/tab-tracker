@@ -30,9 +30,11 @@ module.exports = (app) => {
     BookmarkController.index)
 
   app.post('/bookmarks',
+    isAuthenticated,
     BookmarkController.post)
 
   app.delete('/bookmarks/:bookmarkId',
+    isAuthenticated,
     BookmarkController.delete)
 
   app.get('/histories/',
