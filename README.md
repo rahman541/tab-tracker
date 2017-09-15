@@ -1,4 +1,5 @@
 Full Stack Web App using Vue.js & Express.js
+![Preview](preview.png)
 
 ## Usage
 On server folder run
