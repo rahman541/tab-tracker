@@ -20,7 +20,7 @@ module.exports = {
           {},
           history.Song, history
         ))
-      res.send(histories)
+      res.send(_.uniqBy(histories, history => history.SongId))
     } catch (err) {
       console.log(err)
       res.status(500).send({
