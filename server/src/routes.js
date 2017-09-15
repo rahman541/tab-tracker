@@ -24,5 +24,11 @@ module.exports = (app) => {
     SongController.update)
 
   app.get('/bookmarks',
-  	BookmarkController.index)
+    BookmarkController.index)
+
+  app.post('/bookmarks',
+    BookmarkController.post)
+
+  app.delete('/bookmarks/:bookmarkId',
+  	BookmarkController.delete)
 }
