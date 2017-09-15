@@ -13,7 +13,7 @@ module.exports = {
       })
       res.send(bookmark)
     } catch (err) {
-        res.status(500).send({
+        return res.status(500).send({
         error: 'An error has occured.'
       })
     }
@@ -21,13 +21,27 @@ module.exports = {
 
   async post (req, res) {
     try {
-      const bookmark = req.body
+      const {songId, userId} = req.body.params
+      const bookmark = await Bookmark.findOne({
+        where: {
+          SongId: songId,
+          UserId: songId
+        }
+      })
+      if (bookmark) {
+        return res.status(400).send({
+          error: 'You already have this set as a bookmark'
+        })
+      }
 
-      await Bookmark.create(bookmark)
-      res.send(bookmark)
+      const newBookmark = await Bookmark.create({
+        SongId: songId,
+        UserId: userId
+      })
+      res.status(201).send(newBookmark)
     } catch (err) {
-        res.status(500).send({
-        error: 'An error has occured.'
+      return res.status(500).send({
+        error: 'An internal error has occured.'
       })
     }
   },
