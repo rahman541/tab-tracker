@@ -20,6 +20,7 @@
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 import SongsService from '@/services/SongsService'
 import SongMetadata from './SongMetadata'
 import YouTube from './YouTube'
@@ -35,7 +36,7 @@ export default {
   },
   computed: {
     ...mapState([
-      'isUserLoggedIn'
+      'isUserLoggedIn',
       'user',
       'route'
     ])
@@ -46,7 +47,7 @@ export default {
 
     if (this.isUserLoggedIn) {
       SongHistoryService.post({
-        songId: songId
+        songId: songId,
         userId: this.user.id
       })
     }
